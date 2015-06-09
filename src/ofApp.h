@@ -21,32 +21,34 @@ public:
     void dragEvent(ofDragInfo dragInfo);
     void gotMessage(ofMessage msg);
     
-    void generateNoise(int w, int h);
-    float sumOctave(int num_iterations, float x, float y, float persistence, float scale, int low, int high);
-    void updateMesh();
-        
-    int width;
-    int height;
     
     // GUI
-    bool guiHide;
     ofxPanel gui;
-    ofxVec3Slider rotation;
-    ofxVec3Slider position;
-    ofxVec2Slider noiseOffset;
+    ofxFloatSlider scaleSlider;
+    ofxFloatSlider noiseXSlider;
+    ofxFloatSlider noiseYSlider;
+    ofxFloatSlider extrusionSlider;
     ofxToggle showWireframe;
     ofxToggle showNoise;
     ofxLabel fps;
+    void vec2ValChanged(ofVec2f &val);
+    void floatValChanged(float &val);
+    void boolValChanged(bool &val);
+    void intValChanged(int &val);
     
+
     // NOISE
     ofxSimplex *simplex;
-    ofImage simplexImage;
-    ofVec2f currentOffset;
+    ofImage noiseImage;
+    ofImage meshImage;
+    void generateNoise(ofImage &img, int offsetX, int offsetY);
+    float sumOctave(int num_iterations, float x, float y, float persistence, float scale, int low, int high);
+    
     
     // MESH
     ofLight spot;
     ofEasyCam cam; // add mouse controls for camera movement
-    float extrusionAmount;
-    ofVboMesh mainMesh;
-    
+    ofVboMesh mesh;
+    void generateMesh(ofVboMesh &mesh, int width, int height);
+    void updateMesh(ofVboMesh &mesh, ofImage &img, float extrusion);
 };
