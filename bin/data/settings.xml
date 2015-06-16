@@ -1,7 +1,24 @@
 <group>
 	<center>122.449, 0</center>
 <group/>
-	<FPS>6.81446</FPS>
+	<FPS>59.9609</FPS>
 <Rotation>0, 0, 0</Rotation>
 	<Position>0, 0, 0</Position>
+<Zoom>702</Zoom>
+	<noiseW>12</noiseW>
+	<noiseH>12</noiseH>
+	<Scale>1</Scale>
+	<Space>6</Space>
+	<alpha>2</alpha>
+	<beta>2</beta>
+	<Normalize>1</Normalize>
+	<NoiseX>0</NoiseX>
+	<NoiseY>0</NoiseY>
+	<Extrusion>100</Extrusion>
+	<Normals>1</Normals>
+	<Noise>0</Noise>
+	<Debug>
+		<Wireframe>1</Wireframe>
+	</Debug>
+	<Light_Position>0, 0, 500</Light_Position>
 </group>
