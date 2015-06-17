@@ -1,48 +1,37 @@
-//
-//  NoiseGenerator.h
-//  Mountains
-//
-//  Created by Skåla, Knut Emil (OSL-SDG) on 17.06.15.
-//
-//
-
-#ifndef __Mountains__NoiseGenerator__
-#define __Mountains__NoiseGenerator__
 
 #include "ofMain.h"
+#include "ofxMeshUtils.h"
+#include "Utils.h"
 
-class NoiseGenerator;
+class MeshGenerator;
 
 template<typename ParameterType>
-class ofNoiseGeneratorParam: public ofReadOnlyParameter<ParameterType, NoiseGenerator>{
-    friend class NoiseGenerator;
+class ofMeshGeneratorParam: public ofReadOnlyParameter<ParameterType, MeshGenerator>{
+    friend class MeshGenerator;
 };
 
-class NoiseGenerator {
+class MeshGenerator {
+private:
+    ofVec3f offset = ofVec3f(0, 0, 0);
     bool dirty = true;
     
 public:
-    NoiseGenerator();
+    MeshGenerator();
     
     void setup(string name);
     void draw();
-    void generate();
-    float sumOctave(int num_iterations, float x, float y, float persistence, float scale, int low, int high);
+    void generate(ofFloatImage &image);
+    ofVboMesh mesh;
     
-    void vec2ValChanged(ofVec2f &val);
-    void floatValChanged(float &val);
-    bool getDirty();
-    
+    // GUI
     ofParameterGroup parameters;
-    ofParameter<ofVec2f> size, offset;
-    ofParameter<float> scale, alpha, beta;
-    //ofParameter<bool> normalize;
-    
-    ofFloatImage noiseImage;
-    ofFloatImage scaleImage;
+    ofParameter<float> space, extrusion;
+    ofParameter<bool> wireframe;
+    ofParameter<bool> normals;
+    void floatValChanged(float &val);
+    void boolValChanged(bool &val);
+    bool getDirty();
 };
 
 
-
-#endif /* defined(__Mountains__NoiseGenerator__) */
 

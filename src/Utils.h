@@ -1,14 +1,8 @@
-//
-//  Utils.h
-//  Mountains
-//
-//  Created by Skåla, Knut Emil (OSL-SDG) on 17.06.15.
-//
-//
 
-#ifndef __Mountains__Utils__
-#define __Mountains__Utils__
+#include "ofMain.h"
 
-#include <stdio.h>
-
-#endif /* defined(__Mountains__Utils__) */
+class Utils {
+    
+public:
+    static void drawNormals(ofMesh &mesh, float length);
+};
