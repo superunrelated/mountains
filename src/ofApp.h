@@ -3,9 +3,9 @@
 #include "ofMain.h"
 #include "ofxNoise.h"
 #include "ofxGui.h"
-#include "ofxMeshUtils.h"
-#include "ofxUI.h"
 
+#include "NoiseGenerator.h"
+#include "MeshGenerator.h"
 
 class ofApp : public ofBaseApp{
     
@@ -23,59 +23,23 @@ public:
     void windowResized(int w, int h);
     void dragEvent(ofDragInfo dragInfo);
     void gotMessage(ofMessage msg);
-    
-    
-    // UTILS
-    void drawNormals();
-    
-    // OTHER GUI
-    ofxUICanvas *uigui;
-    void exit();
-    void guiEvent(ofxUIEventArgs &e);
-    
-    
+
     // GUI
     ofxPanel gui;
-    ofxFloatSlider zoomSlider;
-    ofxFloatSlider noiseWSlider;
-    ofxFloatSlider noiseHSlider;
-    ofxFloatSlider scaleSlider;
-    ofxFloatSlider spaceSlider;
+    ofParameterGroup parameters;
+    ofParameter<float> zoom;
+    ofParameterGroup debug;
+    ofParameter<bool> showHelpers;
     
-    ofxToggle normalize;
-    ofxFloatSlider alpha;
-    ofxFloatSlider beta;
-    ofxFloatSlider noiseXSlider;
-    ofxFloatSlider noiseYSlider;
-    ofxFloatSlider extrusionSlider;
-    ofxLabel fps;
-    
-    ofParameter<bool> showWireframe;
-    ofParameter<bool> showNoise;
-    ofParameter<bool> showNormals;
-    ofParameterGroup debugGroup;
-    
-    ofParameter<ofVec3f> lightPosition;
-    
-    void vec2ValChanged(ofVec2f &val);
-    void floatValChanged(float &val);
-    void boolValChanged(bool &val);
-    void intValChanged(int &val);
-    
+    // COMPONENTS
+    NoiseGenerator noise, distortion;
+    MeshGenerator mesh;
+    Utils utils;
 
-    // NOISE
-    ofxSimplex *simplex;
-    ofFloatImage noiseImage;
-    ofFloatImage meshImage;
-    void generateNoise(ofFloatImage &img, float offsetX, float offsetY);
-    float sumOctave(int num_iterations, float x, float y, float persistence, float scale, int low, int high);
-    
-    
-    // MESH
+    ofParameter<ofVec3f> lightPosition;
+    ofxLabel fps;
+
     ofLight pointLight;
-    ofEasyCam cam; // add mouse controls for camera movement
-    ofVboMesh mesh;
-    void generateMesh(ofVboMesh &mesh, int width, int height, int space);
-    void updateMesh(ofVboMesh &mesh, ofFloatImage &img, float extrusion);
+    ofEasyCam cam;
     ofMaterial material;
 };

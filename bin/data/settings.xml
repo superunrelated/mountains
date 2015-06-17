@@ -1,24 +1,44 @@
-<group>
-	<center>122.449, 0</center>
-<group/>
-	<FPS>59.9609</FPS>
-<Rotation>0, 0, 0</Rotation>
-	<Position>0, 0, 0</Position>
-<Zoom>702</Zoom>
-	<noiseW>12</noiseW>
-	<noiseH>12</noiseH>
-	<Scale>1</Scale>
-	<Space>6</Space>
-	<alpha>2</alpha>
-	<beta>2</beta>
-	<Normalize>1</Normalize>
-	<NoiseX>0</NoiseX>
-	<NoiseY>0</NoiseY>
-	<Extrusion>100</Extrusion>
-	<Normals>1</Normals>
-	<Noise>0</Noise>
-	<Debug>
-		<Wireframe>1</Wireframe>
-	</Debug>
-	<Light_Position>0, 0, 500</Light_Position>
-</group>
+<Widget>
+    <Kind>4</Kind>
+    <Name>BACKGROUND</Name>
+    <Value>108.029556274</Value>
+<settings>
+		<Zoom>177</Zoom>
+		<Noise>
+			<size>81.056, 58.5758</size>
+		<Size>128, 128</Size>
+			<Offset>9.63557, 7.44898</Offset>
+			<Scale>1</Scale>
+			<Alpha>2</Alpha>
+			<Beta>2</Beta>
+		<Draw>0</Draw>
+		</Noise>
+		<Distortion>
+			<size>46.0133, 50.6416</size>
+		</Distortion>
+		<noiseW>12</noiseW>
+		<noiseH>12</noiseH>
+		<Scale>1.095</Scale>
+		<Space>5.085</Space>
+		<alpha>2.8275</alpha>
+		<beta>3.515</beta>
+		<Normalize>1</Normalize>
+		<NoiseX>0</NoiseX>
+		<NoiseY>0</NoiseY>
+		<Extrusion>100</Extrusion>
+		<FPS>59.8116</FPS>
+		<Debug>
+			<Wireframe>1</Wireframe>
+			<Normals>1</Normals>
+			<Noise>1</Noise>
+		<Helpers>0</Helpers>
+		</Debug>
+		<Light_Position>35.7143, -142.857, 155.612</Light_Position>
+	<Mesh>
+			<Space>1</Space>
+			<Extrusion>58.5663</Extrusion>
+			<Wireframe>0</Wireframe>
+		<Normals>0</Normals>
+		</Mesh>
+	</settings>
+</Widget>
