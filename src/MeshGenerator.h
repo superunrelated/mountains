@@ -20,12 +20,13 @@ public:
     
     void setup(string name);
     void draw();
-    void generate(ofFloatImage &image);
+    void generate(ofFloatImage &noiseMap, ofFloatImage &distortionMap);
     ofVboMesh mesh;
+    ofMaterial material;
     
     // GUI
     ofParameterGroup parameters;
-    ofParameter<float> space, extrusion;
+    ofParameter<float> space, extrusion, distortion;
     ofParameter<bool> wireframe;
     ofParameter<bool> normals;
     void floatValChanged(float &val);

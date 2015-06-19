@@ -44,3 +44,4 @@ DerivedData
 *.xcuserstate
 
 bin/MountainsDebug.app
+bin/Mountains.app

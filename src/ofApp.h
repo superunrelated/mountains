@@ -3,11 +3,15 @@
 #include "ofMain.h"
 #include "ofxNoise.h"
 #include "ofxGui.h"
+#include "ofxDofShader.h"
 
 #include "NoiseGenerator.h"
 #include "MeshGenerator.h"
 
 class ofApp : public ofBaseApp{
+private:
+    bool dirty = true;
+    bool guiHide = false;
     
 public:
     void setup();
@@ -27,9 +31,11 @@ public:
     // GUI
     ofxPanel gui;
     ofParameterGroup parameters;
-    ofParameter<float> zoom;
-    ofParameterGroup debug;
+    ofParameter<float> zoom, scale;
+    ofParameter<ofVec2f> size;
     ofParameter<bool> showHelpers;
+    void vec2ValChanged(ofVec2f &val);
+    void floatValChanged(float &val);
     
     // COMPONENTS
     NoiseGenerator noise, distortion;
@@ -41,5 +47,10 @@ public:
 
     ofLight pointLight;
     ofEasyCam cam;
-    ofMaterial material;
+    
+    // DOF
+    ofFbo scene;
+    ofFbo dof;
+    ofxDofShader shader;
+    void setupDepthOfField(int width, int height);
 };

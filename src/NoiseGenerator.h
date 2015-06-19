@@ -16,18 +16,19 @@ public:
     NoiseGenerator();
     
     void setup(string name);
-    void draw();
-    void generate();
+    void draw(int x, int y);
+    void generate(ofVec2f size, float scale);
     
     ofFloatImage noiseImage;
     ofFloatImage scaleImage;
     
     // GUI
     ofParameterGroup parameters;
-    ofParameter<ofVec2f> size, offset;
-    ofParameter<float> scale, alpha, beta;
+    ofParameter<ofVec2f> offset;
+    ofParameter<float> alpha, beta;
     ofParameter<bool> showNoise;
     //ofParameter<bool> normalize;
+    
     void vec2ValChanged(ofVec2f &val);
     void floatValChanged(float &val);
     bool getDirty();

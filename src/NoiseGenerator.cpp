@@ -14,26 +14,18 @@ NoiseGenerator::NoiseGenerator() {
 
 void NoiseGenerator::setup(string name){
     parameters.setName(name);
-    parameters.add(size.set("Size",
-                            ofVec2f(64, 64),
-                            ofVec2f(1,1),
-                            ofVec2f(128,128)
-                            )
-                   );
     parameters.add(offset.set("Offset",
                             ofVec2f(0,  0),
                             ofVec2f(0,  0),
                             ofVec2f(10, 10)
                             )
                    );
-    parameters.add(scale.set("Scale", 1,   1,   10   ));
+
     parameters.add(alpha.set("Alpha", 2.0, 0.5, 10.0 ));
     parameters.add(beta.set("Beta",   2.0, 0.5, 5.0  ));
     parameters.add(showNoise.set("Draw", false       ));
     
-    size.addListener(this, &NoiseGenerator::vec2ValChanged);
     offset.addListener(this, &NoiseGenerator::vec2ValChanged);
-    scale.addListener(this, &NoiseGenerator::floatValChanged);
     alpha.addListener(this, &NoiseGenerator::floatValChanged);
     beta.addListener(this, &NoiseGenerator::floatValChanged);
 }
@@ -50,21 +42,20 @@ bool NoiseGenerator::getDirty(){
     return dirty;
 }
 
-void NoiseGenerator::draw(){
+void NoiseGenerator::draw(int x, int y){
     if (showNoise){
-        noiseImage.draw(0, 0);
-        scaleImage.draw(noiseImage.width, 0);
+        ofSetColor(255, 255, 255);
+        noiseImage.draw(x, y);
+        scaleImage.draw(x + noiseImage.width, y);
     }
 }
 
-void NoiseGenerator::generate(){
-    if (!dirty) return;
-    
+void NoiseGenerator::generate(ofVec2f size, float scale){
     double maxval = 0.0;
     double minval = 10.0;
     int octaves = 5;
     
-    noiseImage.allocate(size->x, size->y, OF_IMAGE_GRAYSCALE);
+    noiseImage.allocate(size.x, size.y, OF_IMAGE_GRAYSCALE);
     noiseImage.getTextureReference().setTextureMinMagFilter(GL_NEAREST, GL_NEAREST);
     
     for (int i = 0; i < noiseImage.getWidth(); i++) {
@@ -105,7 +96,7 @@ void NoiseGenerator::generate(){
     noiseImage.update();
     
     scaleImage.clone(noiseImage);
-    scaleImage.resize(size->x * scale, size->y * scale);
+    scaleImage.resize(size.x * scale, size.y * scale);
     
     dirty = false;
 }

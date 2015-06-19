@@ -14,6 +14,7 @@
 		2EFA506D1B315DB900BB34C8 /* NoiseGenerator.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2EFA506B1B315DB900BB34C8 /* NoiseGenerator.cpp */; };
 		2EFA50701B318D1700BB34C8 /* MeshGenerator.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2EFA506F1B318D1700BB34C8 /* MeshGenerator.cpp */; };
 		2EFA50731B318F7200BB34C8 /* Utils.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2EFA50711B318F7200BB34C8 /* Utils.cpp */; };
+		2EFD3AA51B3304760027D1CC /* ofxDofShader.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2EFD3AA31B3304760027D1CC /* ofxDofShader.cpp */; };
 		483908258D00B98B4BE69F07 /* ofxLabel.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 78D67A00EB899FAC09430597 /* ofxLabel.cpp */; };
 		5A4349E9754D6FA14C0F2A3A /* tinyxmlparser.cpp in Sources */ = {isa = PBXBuildFile; fileRef = FC5DA1C87211D4F6377DA719 /* tinyxmlparser.cpp */; };
 		5CBB2AB3A60F65431D7B555D /* ofxButton.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C88333E71C9457E441C33474 /* ofxButton.cpp */; };
@@ -102,6 +103,8 @@
 		2EFA506F1B318D1700BB34C8 /* MeshGenerator.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = MeshGenerator.cpp; sourceTree = "<group>"; };
 		2EFA50711B318F7200BB34C8 /* Utils.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Utils.cpp; sourceTree = "<group>"; };
 		2EFA50721B318F7200BB34C8 /* Utils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Utils.h; sourceTree = "<group>"; };
+		2EFD3AA31B3304760027D1CC /* ofxDofShader.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = ofxDofShader.cpp; sourceTree = "<group>"; };
+		2EFD3AA41B3304760027D1CC /* ofxDofShader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ofxDofShader.h; sourceTree = "<group>"; };
 		318ABED90EADFB757FFDCCAF /* ofxVectorGraphics.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 30; name = ofxVectorGraphics.cpp; path = ../../../addons/ofxVectorGraphics/src/ofxVectorGraphics.cpp; sourceTree = SOURCE_ROOT; };
 		34BF591C646B5F6EF968D620 /* CreEPS.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 30; name = CreEPS.cpp; path = ../../../addons/ofxVectorGraphics/libs/CreEPS.cpp; sourceTree = SOURCE_ROOT; };
 		50DF87D612C5AAE17AAFA6C0 /* ofxXmlSettings.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 30; name = ofxXmlSettings.cpp; path = ../../../addons/ofxXmlSettings/src/ofxXmlSettings.cpp; sourceTree = SOURCE_ROOT; };
@@ -234,6 +237,24 @@
 			path = ../../../addons/ofxNoise/src;
 			sourceTree = "<group>";
 		};
+		2EFD3AA11B3304760027D1CC /* ofxDofShader */ = {
+			isa = PBXGroup;
+			children = (
+				2EFD3AA21B3304760027D1CC /* src */,
+			);
+			name = ofxDofShader;
+			sourceTree = "<group>";
+		};
+		2EFD3AA21B3304760027D1CC /* src */ = {
+			isa = PBXGroup;
+			children = (
+				2EFD3AA31B3304760027D1CC /* ofxDofShader.cpp */,
+				2EFD3AA41B3304760027D1CC /* ofxDofShader.h */,
+			);
+			name = src;
+			path = ../../../addons/ofxDofShader/src;
+			sourceTree = "<group>";
+		};
 		3801B04C72ADFE74ED284693 /* src */ = {
 			isa = PBXGroup;
 			children = (
@@ -312,6 +333,7 @@
 				1F4FB5C423662B96ADFDCC0B /* ofxXmlSettings */,
 				2EC2BA941B2592A000C6C59F /* ofxNoise */,
 				2E2636181B30541A0011DFBD /* ofxMeshUtils */,
+				2EFD3AA11B3304760027D1CC /* ofxDofShader */,
 			);
 			name = addons;
 			sourceTree = "<group>";
@@ -498,6 +520,7 @@
 				F285EB3169F1566CA3D93C20 /* ofxPanel.cpp in Sources */,
 				2EFA50701B318D1700BB34C8 /* MeshGenerator.cpp in Sources */,
 				837220E80EB56CD44AD27F2A /* ofxSlider.cpp in Sources */,
+				2EFD3AA51B3304760027D1CC /* ofxDofShader.cpp in Sources */,
 				B56FE57CC35806596D38118C /* ofxSliderGroup.cpp in Sources */,
 				1CD33E884D9E3358252E82A1 /* ofxToggle.cpp in Sources */,
 				603044E656EA8D499FCF7DEA /* ofxVectorGraphics.cpp in Sources */,
